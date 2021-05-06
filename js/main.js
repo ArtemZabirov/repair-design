@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 */
 
+
+
 $(document).ready(function() {
   var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
@@ -35,8 +37,7 @@ $(document).ready(function() {
   closeButton.on('click', function() {
     modal.toggleClass('modal--visible')
   });   
-  
-
+   
 });
 
 jQuery(document).ready(function() {
@@ -55,3 +56,25 @@ jQuery(document).ready(function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function(event) {
+  const swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+  });
+  
+  var next = $('.swiper-button-next');
+  var prev = $('.swiper-button-prev');
+  var bullets = $('.swiper-pagination');
+
+  next.css('left', prev.width() + 10 + bullets.width() + 10)
+  bullets.css('left', prev.width() + 10)
+});
