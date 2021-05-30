@@ -38,6 +38,8 @@ $(document).ready(function() {
     modal.toggleClass('modal--visible')
   });   
    
+
+  
 });
 
 jQuery(document).ready(function() {
@@ -53,6 +55,7 @@ jQuery(document).ready(function() {
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, '100');
   });
+  
 });
 
 
@@ -77,4 +80,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   next.css('left', prev.width() + 10 + bullets.width() + 10)
   bullets.css('left', prev.width() + 10)
+
+  new WOW().init();
+
+  $('.modal__form').validate({
+    errorClass: "invalid",
+    rules: {
+      // simple rule, converted to {required:true}
+      userName: "required",
+      userPhone: "required",
+      // compound rule
+      userEmail: {
+        required: true,
+        email: true
+      }
+    },
+    messages: {
+      userName: "Имя обязательно",
+      userPhone: "Телефон обязателен",
+      userEmail: {
+        required: "Обязательно укажите email",
+        email: "Введите в формате: name@domain.com"
+      }
+    }
+  });
+
+  $('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7(___) ___-__-__"})
 });
+
