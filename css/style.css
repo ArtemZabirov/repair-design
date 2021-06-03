@@ -822,6 +822,22 @@ input.invalid {
   .footer__menu {
     background-color: #131313;
     padding: 4.285rem 0; }
+  .footer__map {
+    margin-bottom: 4rem; }
+
+.map {
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  filter: grayscale(1); }
+
+#map {
+  height: 465px;
+  width: 100%; }
+
+#map ymaps:first {
+  height: 465px;
+  width: 100%; }
 
 .okno {
   width: 100%;
@@ -900,7 +916,9 @@ input.invalid {
   .types__card {
     margin-bottom: 4.29rem; }
   .card__text {
-    margin-left: 0; } }
+    margin-left: 0; }
+  #map {
+    height: 250px; } }
 
 @media screen and (max-width: 460px) {
   .contacts__phone {
